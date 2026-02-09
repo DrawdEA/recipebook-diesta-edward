@@ -1,0 +1,18 @@
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title> {% block title %} Recipe List {% endblock %} </title>
+</head>
+
+<body>
+	<header>
+		<h1>Recipe Book</h1>
+	</header>
+	<div>
+		{% block content %}{% endblock %}
+	</div>
+	{% block scripts %}{% endblock %}
+</body>
+
+</html>
