@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 def recipe_list(request):
     context = {
@@ -28,7 +27,7 @@ def recipe_list(request):
                         "quantity": "1 packet"
                     }
                 ],
-                "link": "/recipe/1"
+                "link": "/recipe/1/"
             },
             {
                 "name": "Recipe 2",
@@ -62,7 +61,7 @@ def recipe_list(request):
                         "quantity": "1 kilo"
                     }
                 ],
-                "link": "/recipe/2"
+                "link": "/recipe/2/"
             }
         ]
     }
@@ -94,9 +93,9 @@ def recipe1(request):
                 "quantity": "1 packet"
             }
         ],
-        "link": "/recipe/1"
+        "link": "/recipe/1/"
     }
-    return render(request, 'recipe1.html', context)
+    return render(request, 'recipe_detail.html', context)
 
 def recipe2(request):
     context = {
@@ -131,7 +130,7 @@ def recipe2(request):
                 "quantity": "1 kilo"
             }
         ],
-        "link": "/recipe/2"
+        "link": "/recipe/2/"
     }
     
-    return render(request, 'recipe2.html', context)
+    return render(request, 'recipe_detail.html', context)
