@@ -4,6 +4,6 @@ from . import views
 app_name = 'ledger'
 
 urlpatterns = [
-    path('recipes/', views.recipe_list, name='recipe_list'),
-    path('recipes/<int:pk>/', views.recipe_detail, name='recipe_detail'),
+    path('recipes/list/', views.recipe_list, name='recipe-list'),
+    path('recipe/<int:pk>/', views.recipe_detail, name='recipe'),
 ]
