@@ -7,3 +7,6 @@ venv/
 
 # Env file
 .env
+
+# Django
+db.sqlite3
