@@ -1,28 +1,25 @@
 <html lang="en">
-
 <head>
-	<link rel="stylesheet" href="style.css">
-	<title> {% block title %} Recipe List {% endblock %} </title>
+  <link rel="stylesheet" href="style.css">
+  <title>{% block title %}Recipe List{% endblock %}</title>
 </head>
-
 <body>
-	<header>
-		<h1>Recipe Book</h1>
-		{% if user.is_authenticated %}
-			<form method="POST" action="{% url 'logout' %}">
-				{% csrf_token %}
-				{{ form.as_p }}
-				<button type="submit">Logout</button>
-			</form>
-		{% else %}
-			<a href="{% url 'login' %}">Login</a>
-		{% endif %}
-	</header>
-	<h2>{% block page_heading %}{% endblock %}</h2>
-	<div>
-		{% block content %}{% endblock %}
-	</div>
-	{% block scripts %}{% endblock %}
+  <header>
+    <h1>Recipe Book</h1>
+    {% if user.is_authenticated %}
+      <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Logout</button>
+      </form>
+    {% else %}
+      <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </header>
+  <h2>{% block page_heading %}{% endblock %}</h2>
+  <div>
+    {% block content %}{% endblock %}
+  </div>
+  {% block scripts %}{% endblock %}
 </body>
-
 </html>
