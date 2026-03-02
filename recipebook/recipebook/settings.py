@@ -131,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/recipes/list/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+
+# Print password reset emails to the console (no real email needed in development)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
