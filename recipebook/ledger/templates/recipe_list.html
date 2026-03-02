@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block page_heading %}Recipes{% endblock %}
+
 {% block content %}
-<h2>Recipes</h2>
 <ul>
     {% for recipe in recipes %}
         <li>

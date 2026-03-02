@@ -2,8 +2,12 @@
 
 {% block title %}{{ recipe.name }}{% endblock %}
 
+{% block page_heading %}{{ recipe.name }}{% endblock %}
+
 {% block content %}
-    <a href="{{ recipe.get_absolute_url }}"><h2>{{ recipe.name }} Ingredients</h2></a>
+    {% if recipe.author %}
+        <p>Author: {{ recipe.author.name }}</p>
+    {% endif %}
     <ul>
         {% for ingredient in recipe.ingredients.all %}
             <li>{{ ingredient.ingredient.name }} – {{ ingredient.quantity }}</li>
