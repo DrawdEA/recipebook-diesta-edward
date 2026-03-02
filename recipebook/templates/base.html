@@ -4,7 +4,6 @@
 </head>
 <body>
   <header>
-    <h1>Recipe Book</h1>
     {% if user.is_authenticated %}
       <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
@@ -13,6 +12,7 @@
     {% else %}
       <a href="{% url 'login' %}">Login</a>
     {% endif %}
+    <h1>Recipe Book</h1>
   </header>
   <h2>{% block page_heading %}{% endblock %}</h2>
   <div>
