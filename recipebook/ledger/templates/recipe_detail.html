@@ -8,6 +8,9 @@
     {% if recipe.author %}
         <p>Author: {{ recipe.author.name }}</p>
     {% endif %}
+    {% for image in recipe.images.all %}
+        <img src="{{ image.image.url }}" alt="{{ image.description }}">
+    {% endfor %}
     <ul>
         {% for ingredient in recipe.ingredients.all %}
             <li>{{ ingredient.ingredient.name }} – {{ ingredient.quantity }}</li>
