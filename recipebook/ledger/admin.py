@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import User
 
-from .models import Profile, Recipe, RecipeIngredient
+from .models import Profile, Recipe, RecipeImage, RecipeIngredient
 
 
 class ProfileInline(admin.StackedInline):
@@ -18,9 +18,13 @@ class RecipeIngredientInline(admin.TabularInline):
     model = RecipeIngredient
 
 
+class RecipeImageInline(admin.TabularInline):
+    model = RecipeImage
+
+
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
-    inlines = [RecipeIngredientInline]
+    inlines = [RecipeIngredientInline, RecipeImageInline]
 
 
 admin.site.unregister(User)
