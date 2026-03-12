@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block page_heading %}Recipes{% endblock %}
 
 {% block content %}
-<ul>
+  {% if user.is_authenticated %}
+    <p><a href="{% url 'ledger:recipe_add' %}">Add recipe</a></p>
+  {% endif %}
+  <ul>
     {% for recipe in recipes %}
-        <li>
-            <a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a>
-        </li>
+      <li>
+        <a href="{{ recipe.get_absolute_url }}">{{ recipe.name }}</a>
+      </li>
     {% endfor %}
-</ul>
+  </ul>
 {% endblock %}

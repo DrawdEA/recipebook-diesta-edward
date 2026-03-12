@@ -8,6 +8,9 @@
     {% if recipe.author %}
         <p>Author: {{ recipe.author.name }}</p>
     {% endif %}
+    {% if user.is_authenticated %}
+        <p><a href="{% url 'ledger:recipe_add_image' recipe.pk %}">Add image</a></p>
+    {% endif %}
     {% for image in recipe.images.all %}
         <img src="{{ image.image.url }}" alt="{{ image.description }}">
     {% endfor %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Add recipe{% endblock %}
+
+{% block page_heading %}Add recipe{% endblock %}
+
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}
